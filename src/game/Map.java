@@ -24,7 +24,7 @@ public class Map {
 	
 
 	//convert pixels point to polar point
-	public Point3D pixel2Polar(Point3D point) {
+	public static Point3D pixel2Polar(Point3D point) {
 		double ratioHorizontal=leftCornerUp.distance3D(rightCornerUp);
 		double x=point.x()/WIDTHPIC*ratioHorizontal;
 		double ratioVertical=leftCornerUp.distance3D(leftCornerDown);

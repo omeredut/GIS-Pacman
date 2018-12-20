@@ -13,7 +13,7 @@ import geom.Point3D;
 public class Game implements Set<GameElement> {
 	private Set<GameElement> set;
 	private Map map;
-
+	public Game(){}
 	public Game(String picPath,Point3D rightCornerUp,Point3D leftCornerDown) {
 		set=new HashSet<GameElement>();
 		map=new Map(rightCornerUp,leftCornerDown,null,null,picPath);

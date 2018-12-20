@@ -26,6 +26,11 @@ public class GameElement {
 			if(s[0].equals("f")||s[0].equals("F"))
 				object=new Fruit(Integer.parseInt(s[1]),new Point3D(Double.parseDouble(s[2]),Double.parseDouble(s[3]),Double.parseDouble(s[4])),Integer.parseInt(s[5]));
 	}
+	public GameElement(Object _object){
+		if(object.getClass().getName().charAt(0)=="f")
+			object=new Fruit(1,_object.)
+			
+	}
 	
 	public String toString() {
 		return object.toString();

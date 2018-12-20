@@ -1,9 +1,11 @@
 package gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -20,11 +22,12 @@ public class MyFrame extends JFrame {
     JMenuItem openItem, saveItem, copyItem, pasteItem,conMenu;
     JTextField textField;
     int textFieldSize = 10;
+    public static BufferedImage myImage;
 
     public MyFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
-        this.setBounds(200, 200, 350, 200);
+        this.setBounds(200, 200, 1433, 642);
         initComponents();
         createGui();
         this.setVisible(true);
@@ -65,6 +68,13 @@ public class MyFrame extends JFrame {
         helpMenu = new JMenu("Help");
         conMenu=new JMenuItem("connection");
         menuBar.add(helpMenu);
+        
+        try {
+			File file = new File("images\\ariel1.png");
+			myImage = ImageIO.read(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     public void createGui() {

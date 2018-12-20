@@ -9,7 +9,7 @@ public class Main
 	{
 		MainWindow window = new MainWindow();
 		window.setVisible(true);
-		window.setSize(2000,1000);
+		window.setSize(1433,642);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
