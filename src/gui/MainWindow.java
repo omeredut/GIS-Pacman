@@ -30,12 +30,13 @@ public class MainWindow extends JFrame implements MouseListener{
 	public static BufferedImage myImage;
 	//private JMenuBar menuBar;
 	private MenuBar menuBar;
-	private Menu fileMenu, helpMenu,createGame;
-	private MenuItem openItem, saveItem,mapItem;
+	private Menu fileMenu, helpMenu,createGame,gameObjectsMenu,addObjects;
+	private MenuItem openItem, saveItem,mapItem,pacmanItem,fruitItem;
 	private TextField textField;
 	private int textFieldSize = 10;
 	private Game game;
 	private File file;
+
 	
 	public MainWindow() 
 	{
@@ -47,18 +48,29 @@ public class MainWindow extends JFrame implements MouseListener{
 	private void initComponents() 
 	{
 		menuBar = new MenuBar();
+		
+		//Menu
 		fileMenu = new Menu("File"); 
 		helpMenu=new Menu("Help");
+		createGame=new Menu("Create new game");
+		gameObjectsMenu=new Menu("Game objects");
+		addObjects=new Menu("Add objects");
 		
-		openItem = new MenuItem("open Game");
-		saveItem = new MenuItem("save");
+		//Menu Items
+		openItem = new MenuItem("Open game");
+		saveItem = new MenuItem("Save");
+		mapItem=new MenuItem("Add map image");
+		pacmanItem=new MenuItem("Pacman");
+		fruitItem=new MenuItem("Fruit");
+		
 		menuBar.add(fileMenu);
 		menuBar.add(helpMenu);
+		menuBar.add(gameObjectsMenu);
 		
-		createGame=new Menu("create new game");
-		mapItem=new MenuItem("add map image");
+		addObjects.add(pacmanItem);
+		addObjects.add(fruitItem);
+		gameObjectsMenu.add(addObjects);
 		createGame.add(mapItem);
-		
 		fileMenu.add(createGame);
 		fileMenu.add(openItem);
 		fileMenu.add(saveItem);
